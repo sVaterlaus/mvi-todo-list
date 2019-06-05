@@ -1,19 +1,20 @@
 import Immutable from 'immutable'
+const B = require('baconjs')
 
 
 const Store = (initState) => {
   let state = Immutable.fromJS(initState)
-  const store = {
-    getState: () => state,
+  return {
+    state,
     update: (transform) => {
       state = transform(state)
-      return store
+      return state
     },
-    log: (label = 'store') => {
+    stream: () => B.constant(state),
+    debug: (label = 'store') => {
       console.log(`${label}: `, state.toJS())
     },
   }
-  return store
 }
 
 export default Store

@@ -11,4 +11,4 @@ const app = (initModel$) => {
   view(model(intent()))
 }
 
-app(B.constant(store.getState()))
+app(store.stream())
