@@ -1,0 +1,21 @@
+{
+  "name": "mvi-todo-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.33.0",
+    "webpack-cli": "^3.3.2"
+  },
+  "dependencies": {
+    "immutable": "^4.0.0-rc.12",
+    "superfine": "^6.0.1"
+  }
+}
