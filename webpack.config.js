@@ -4,7 +4,11 @@ module.exports = {
   mode: 'development',
   entry: './src/app.js',
   output: {
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, 'dist/'),
     filename: 'bundle.js'
+  },
+  devtool: 'inline-source-map',
+  devServer: {
+    contentBase: 'dist'
   },
 };
