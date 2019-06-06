@@ -1,4 +1,4 @@
-import store from './store'
+const store = require('./store')
 
 
 const model = (intent$) => intent$.map(({ type, payload }) => {
@@ -18,4 +18,4 @@ const model = (intent$) => intent$.map(({ type, payload }) => {
   }
 })
 
-export default model
+module.exports = model

@@ -1,4 +1,4 @@
-import Immutable from 'immutable'
+const Immutable = require('immutable')
 const B = require('baconjs')
 
 
@@ -17,4 +17,4 @@ const Store = (initState) => {
   }
 }
 
-export default Store
+module.exports = Store

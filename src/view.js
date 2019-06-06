@@ -1,6 +1,6 @@
-import { h } from 'superfine'
+const { h } = require('superfine')
 
-import Renderer from './modules/Renderer'
+const Renderer = require('./modules/Renderer')
 
 
 const render = Renderer(document.body)
@@ -13,7 +13,14 @@ const view = (model$) => {
     return h('div', {},
       h('h2', {}, 'MVI Todo List'),
       h('ul', {},
-        todos.map(todo => h('li', { key: todo.id }, todo.text))
+        todos.map(todo => h('div', {
+          key: todo.id, style: {
+            display: 'flex'
+          }
+        },
+          h('button', { id: 'deleteTodo' }, 'X'),
+          h('li', { style: { listStyleType: 'none' } }, todo.text),
+        ))
       ),
       h('span', {},
         h('input', {
@@ -27,4 +34,4 @@ const view = (model$) => {
   }).onValue(vdom => render(vdom))
 }
 
-export default view
+module.exports = view

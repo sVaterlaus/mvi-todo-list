@@ -1,4 +1,4 @@
-import Store from './modules/Store'
+const Store = require('./modules/Store')
 
 
 const store = Store({
@@ -6,4 +6,4 @@ const store = Store({
   todoInput: '',
 })
 
-export default store
+module.exports = store

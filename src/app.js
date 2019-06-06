@@ -1,9 +1,7 @@
-const B = require('baconjs')
-
-import model from './model'
-import view from './view'
-import intent from './intent'
-import store from './store'
+const model = require('./model')
+const view = require('./view')
+const intent = require('./intent')
+const store = require('./store')
 
 
 const app = (initModel$) => {

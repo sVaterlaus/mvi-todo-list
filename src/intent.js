@@ -23,4 +23,4 @@ const intent = () => {
   return B.mergeAll(addTodo$, inputTodo$)
 }
 
-export default intent
+module.exports = intent

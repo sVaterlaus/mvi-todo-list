@@ -1,4 +1,4 @@
-import { patch } from 'superfine'
+const { patch } = require('superfine')
 
 
 const Renderer = (container) => {
@@ -8,4 +8,4 @@ const Renderer = (container) => {
   }
 }
 
-export default Renderer
+module.exports = Renderer
