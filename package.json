@@ -1,16 +1,20 @@
 {
   "name": "mvi-todo-list",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.0",
+  "description": "A todo-list app using the Model-View-Intent pattern and asynchronous data streams",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development --open"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "mvi",
+    "reactive",
+    "stream",
+    "immutable"
+  ],
+  "author": "Spencer Vaterlaus",
+  "license": "MIT",
   "devDependencies": {
     "webpack": "^4.33.0",
     "webpack-cli": "^3.3.2",
