@@ -6,14 +6,14 @@ This is an example app using the reactive Model-View-Intent pattern, asynchronou
 - run dev server: `npm start`
 
 ## Todo:
-CODE
-- [] replace view's h() syntax with JSX
-- [] split up view layer into components
+**CODE**
+* [ ] replace view's h() syntax with JSX
+* [ ] split up view layer into components
 
-FEATURES
-- [] add basic styles
-- [] delete todos
-- [] complete todos, (cross out and list in "completed" section)
-- [] reorder todos (drag & drop)
-- [] persist todos with local database
-- [] add user login with simple username/password auth
+**FEATURES**
+* [ ] add basic styles
+* [ ] delete todos
+* [ ] complete todos, (cross out and list in "completed" section)
+* [ ] reorder todos (drag & drop)
+* [ ] persist todos with local database
+* [ ] add user login with simple username/password auth
