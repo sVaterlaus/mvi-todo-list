@@ -10,26 +10,24 @@ const view = (model$) => {
     const todos = model.get('todos').toJS()
     const todoInput = model.get('todoInput')
 
-    return h('div', {},
-      h('h2', {}, 'MVI Todo List'),
-      h('ul', {},
-        todos.map(todo => h('div', {
-          key: todo.id, style: {
-            display: 'flex'
-          }
-        },
-          h('button', { id: 'deleteTodo' }, 'X'),
-          h('li', { style: { listStyleType: 'none' } }, todo.text),
-        ))
-      ),
-      h('span', {},
-        h('input', {
-          id: 'input-todo',
-          type: 'text',
-          value: todoInput,
-        }),
-        h('button', { id: 'add-todo' }, 'add'),
-      )
+    return (
+      <div>
+        <h2>MVI Todo List</h2>
+        <ul>
+          {todos.map(todo => <div key={todo.id} style={{ display: 'flex' }}>
+            <button id='deleteTodo'>X</button>
+            <li style={{ listStyleType: 'none' }}>{todo.text}</li>
+          </div>)}
+        </ul>
+        <span>
+          <input
+            id='input-todo'
+            type='text'
+            value={todoInput}
+          ></input>
+          <button id='add-todo'>add</button>
+        </span>
+      </div>
     )
   }).onValue(vdom => render(vdom))
 }
