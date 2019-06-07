@@ -4,7 +4,10 @@ const intent = require('./intent')
 const store = require('./store')
 
 
-const app = (initModel$) => {
+/*
+app() has no return value, it only renders the initial model to the DOM and trigger the intent -> model -> view pattern
+*/
+const app = (initModel$) => { // eslint-disable-line fp/no-nil
   view(initModel$)
   view(model(intent()))
 }

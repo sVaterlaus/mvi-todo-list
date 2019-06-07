@@ -1,12 +1,14 @@
-const { h } = require('superfine')
+// the "h" import is required bedcause JSX is transpiled to superfine's "h" function
+const { h } = require('superfine') // eslint-disable-line no-unused-vars
 
 const Renderer = require('./modules/Renderer')
 
 
 const render = Renderer(document.body)
 
-const view = (model$) => {
-  model$.map(model => {
+// view() has no return value, it only transforms its input and renders it to the DOM
+const view = (model$) => { // eslint-disable-line fp/no-nil
+  model$.map((model) => {
     const todos = model.get('todos').toJS()
     const todoInput = model.get('todoInput')
 

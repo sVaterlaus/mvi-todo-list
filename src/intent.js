@@ -14,7 +14,7 @@ const intent = () => {
     payload: { id: uuid(), text: inputTodoField.value },
   }))
 
-  const inputTodo$ = B.fromEvent(inputTodoField, 'input', (e) => ({
+  const inputTodo$ = B.fromEvent(inputTodoField, 'input', e => ({
     type: 'INPUT_TODO',
     payload: { value: e.target.value },
   }))

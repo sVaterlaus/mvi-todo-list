@@ -7,7 +7,7 @@ This is an example app using the reactive Model-View-Intent pattern, asynchronou
 
 ## Todo:
 CODE
-- [] replace view's h() syntax with JSX
+- [x] replace view's h() syntax with JSX
 - [] split up view layer into components
 
 FEATURES

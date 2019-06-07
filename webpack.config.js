@@ -1,19 +1,19 @@
-const path = require("path");
+const path = require('path')
 
 module.exports = {
   mode: 'development',
   entry: './src/app.js',
   output: {
     path: path.resolve(__dirname, 'dist/'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: 'dist'
+    contentBase: 'dist',
   },
   module: {
     rules: [
-      { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" }
-    ]
-  }
-};
+      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
+    ],
+  },
+}
