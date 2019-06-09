@@ -11,7 +11,6 @@
             2,
             "never"
         ],
-        "no-console": 0,
         "max-len": [
             2,
             {
@@ -24,7 +23,9 @@
                 "commonjs": true
             }
         ],
-        "fp/no-unused-expression": 0
+        "fp/no-unused-expression": 0,
+        "fp/no-nil": 0,
+        "fp/no-rest-parameters": 0,
     },
     "parserOptions": {
         "ecmaFeatures": {

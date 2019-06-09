@@ -12,8 +12,8 @@ const Store = (initState) => {
       return state
     },
     stream: () => B.constant(state),
-    // debug() is only for logging store state and should not be used in production
-    debug: (label = 'store') => { // eslint-disable-line fp/no-nil
+    // debug: NOT FOR PRODUCTION
+    debug: (label = 'store') => {
       console.log(`${label}: `, state.toJS())
     },
   }

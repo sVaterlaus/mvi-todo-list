@@ -6,8 +6,7 @@ const Renderer = require('./modules/Renderer')
 
 const render = Renderer(document.body)
 
-// view() has no return value, it only transforms its input and renders it to the DOM
-const view = (model$) => { // eslint-disable-line fp/no-nil
+const view = (model$) => {
   model$.map((model) => {
     const todos = model.get('todos').toJS()
     const todoInput = model.get('todoInput')
