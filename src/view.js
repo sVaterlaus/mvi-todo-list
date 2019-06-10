@@ -1,14 +1,10 @@
 // the "h" import is required bedcause JSX is transpiled to superfine's "h" function
 import { h } from 'superfine' // eslint-disable-line no-unused-vars
 
-import model from './model'
-import intent from './intent'
 import Renderer from './modules/Renderer'
+import run from './run'
 
 
-const run = e => {
-  view(model(intent(e)))
-}
 const render = Renderer(document.body)
 
 const view = (model) => {
@@ -21,24 +17,21 @@ const view = (model) => {
       <ul>
         {todos.map(todo => <div key={todo.id} style={{ display: 'flex' }}>
           <button
-            class='delete-todo'
             data-id={todo.id}
-            onclick={run}
+            onclick={run('deleteTodoClick')}
           >X</button>
           <li style={{ listStyleType: 'none' }}>{todo.text}</li>
         </div>)}
       </ul>
       <span>
         <input
-          class='input-todo'
           type='text'
           value={todoInput}
-          onkeyup={run}
-          oninput={run}
+          onkeyup={run('inputTodoKeyup')}
+          oninput={run('inputTodoInput')}
         ></input>
         <button
-          class='add-todo'
-          onclick={run}
+          onclick={run('addTodoClick')}
         >add</button>
       </span>
     </div>

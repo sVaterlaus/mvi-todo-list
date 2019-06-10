@@ -11,8 +11,7 @@ CODE
 - [] split up view layer into components
 - [x] re-architect to use listeners instead of streams
 - [x] use import/export instead of require()
-- [] use auto-generated, globally-unique class names
-- [] use simplified, virtual event types
+- [x] use event labels instead of classes
 
 FEATURES
 - [] add basic styles
@@ -22,5 +21,6 @@ FEATURES
 - [] persist todos with local database
 - [] add user login with simple username/password auth
 
-OTHER
-- [] add pattern/system explanations + diagrams to readme
+README
+- [] add system diagram
+- [] add explanation of data flow 
