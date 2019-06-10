@@ -1,5 +1,5 @@
 # MVI Todo List
-This is an example app using the reactive Model-View-Intent pattern, asynchronous data streams, and an immutable data store.
+This is an example app using a reactive Model-View-Intent pattern and an immutable data store.
 
 ## Setup:
 - install dependencies: `npm i`
