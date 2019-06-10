@@ -2,7 +2,7 @@
   "name": "mvi-todo-list",
   "version": "0.0.0",
   "description": "A todo-list app using the Model-View-Intent pattern and asynchronous data streams",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development --open"
@@ -10,7 +10,6 @@
   "keywords": [
     "mvi",
     "reactive",
-    "stream",
     "immutable"
   ],
   "author": "Spencer Vaterlaus",
@@ -29,7 +28,6 @@
     "webpack-dev-server": "^3.6.0"
   },
   "dependencies": {
-    "baconjs": "^3.0.3",
     "immutable": "^4.0.0-rc.12",
     "superfine": "^6.0.1",
     "uuid": "^3.3.2"

@@ -1,26 +1,23 @@
-const B = require('baconjs')
 const uuid = require('uuid/v4')
 
 
-const intent = () => {
-  const addTodoBtn = document.getElementById('add-todo')
-  const inputTodoField = document.getElementById('input-todo')
+const intent = (e) => {
+  if (e.type === 'input' && e.target.className === 'input-todo')
+    return { type: 'INPUT_TODO', payload: { value: e.target.value } }
 
-  const addTodo$ = B.mergeAll(
-    B.fromEvent(addTodoBtn, 'click'),
-    B.fromEvent(inputTodoField, 'keyup').filter(e => e.key === 'Enter'),
-  ).map(() => ({
-    type: 'ADD_TODO',
-    payload: { id: uuid(), text: inputTodoField.value },
-  }))
+  if (e.type === 'click' && e.target.className === 'add-todo')
+    return { type: 'ADD_TODO', payload: { id: uuid() } }
 
-  const inputTodo$ = B.fromEvent(inputTodoField, 'input', e => ({
-    type: 'INPUT_TODO',
-    payload: { value: e.target.value },
-  }))
+  if (e.type === 'keyup' && e.key === 'Enter' && e.target.className === 'input-todo')
+    return { type: 'ADD_TODO', payload: { id: uuid() } }
 
+  if (e.type === 'click' && e.target.className === 'delete-todo')
+    return {
+      type: 'DELETE_TODO',
+      payload: { id: e.target.dataset.id }
+    }
 
-  return B.mergeAll(addTodo$, inputTodo$)
+  return {}
 }
 
 module.exports = intent

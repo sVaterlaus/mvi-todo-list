@@ -9,10 +9,11 @@ This is an example app using the reactive Model-View-Intent pattern, asynchronou
 CODE
 - [x] replace view's h() syntax with JSX
 - [] split up view layer into components
+- [x] re-architect to use listeners instead of streams
 
 FEATURES
 - [] add basic styles
-- [] delete todos
+- [x] delete todos
 - [] complete todos, (cross out and list in "completed" section)
 - [] reorder todos (drag & drop)
 - [] persist todos with local database
