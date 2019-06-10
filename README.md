@@ -8,19 +8,19 @@ This is an example app using a reactive Model-View-Intent pattern and an immutab
 ## Todo:
 CODE
 - [x] replace view's h() syntax with JSX
-- [] split up view layer into components
+- [ ] split up view layer into components
 - [x] re-architect to use listeners instead of streams
 - [x] use import/export instead of require()
 - [x] use event labels instead of classes
 
 FEATURES
-- [] add basic styles
+- [ ] add basic styles
 - [x] delete todos
-- [] complete todos, (cross out and list in "completed" section)
-- [] reorder todos (drag & drop)
-- [] persist todos with local database
-- [] add user login with simple username/password auth
+- [ ] complete todos, (cross out and list in "completed" section)
+- [ ] reorder todos (drag & drop)
+- [ ] persist todos with local database
+- [ ] add user login with simple username/password auth
 
 README
-- [] add system diagram
-- [] add explanation of data flow 
+- [ ] add system diagram
+- [ ] add explanation of data flow 
