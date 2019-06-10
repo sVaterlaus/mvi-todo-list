@@ -20,6 +20,7 @@ FEATURES
 - [ ] reorder todos (drag & drop)
 - [ ] persist todos with local database
 - [ ] add user login with simple username/password auth
+- [ ] add page/route handling
 
 README
 - [ ] add system diagram
