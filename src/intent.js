@@ -1,4 +1,4 @@
-const uuid = require('uuid/v4')
+import uuid from 'uuid/v4'
 
 
 const intent = (e) => {
@@ -20,4 +20,5 @@ const intent = (e) => {
   return {}
 }
 
-module.exports = intent
+
+export default intent

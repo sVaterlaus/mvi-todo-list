@@ -10,6 +10,9 @@ CODE
 - [x] replace view's h() syntax with JSX
 - [] split up view layer into components
 - [x] re-architect to use listeners instead of streams
+- [x] use import/export instead of require()
+- [] use auto-generated, globally-unique class names
+- [] use simplified, virtual event types
 
 FEATURES
 - [] add basic styles
@@ -18,3 +21,6 @@ FEATURES
 - [] reorder todos (drag & drop)
 - [] persist todos with local database
 - [] add user login with simple username/password auth
+
+OTHER
+- [] add pattern/system explanations + diagrams to readme

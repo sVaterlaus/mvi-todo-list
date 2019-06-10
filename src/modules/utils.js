@@ -1,4 +1,4 @@
-module.exports.DEBUG = (val) => {
+export const DEBUG = (val) => {
   console.log('DEBUG: ', val)
   return val
 }

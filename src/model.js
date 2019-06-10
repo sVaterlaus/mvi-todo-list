@@ -1,4 +1,4 @@
-const store = require('./store')
+import store from './store'
 
 
 const model = ({ type, payload }) => {
@@ -28,4 +28,4 @@ const model = ({ type, payload }) => {
 }
 
 
-module.exports = model
+export default model

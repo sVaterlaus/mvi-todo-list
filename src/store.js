@@ -1,4 +1,5 @@
-const Store = require('./modules/Store')
+// import Store from './modules/Store'
+import Store from './modules/Store'
 
 
 const store = Store({
@@ -6,4 +7,5 @@ const store = Store({
   todoInput: '',
 })
 
-module.exports = store
+
+export default store

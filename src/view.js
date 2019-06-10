@@ -1,9 +1,9 @@
 // the "h" import is required bedcause JSX is transpiled to superfine's "h" function
-const { h } = require('superfine') // eslint-disable-line no-unused-vars
+import { h } from 'superfine' // eslint-disable-line no-unused-vars
 
-const model = require('./model')
-const intent = require('./intent')
-const Renderer = require('./modules/Renderer')
+import model from './model'
+import intent from './intent'
+import Renderer from './modules/Renderer'
 
 
 const run = e => {
@@ -45,4 +45,5 @@ const view = (model) => {
   )
 }
 
-module.exports = view
+
+export default view

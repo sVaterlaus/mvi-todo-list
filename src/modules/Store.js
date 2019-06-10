@@ -1,4 +1,4 @@
-const Immutable = require('immutable')
+import Immutable from 'immutable'
 
 
 // Store's variable reassignment is necessary for updating an immutable data store
@@ -19,4 +19,5 @@ const Store = (initState) => {
   }
 }
 
-module.exports = Store
+
+export default Store

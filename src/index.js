@@ -1,5 +1,5 @@
-const view = require('./view')
-const store = require('./store')
+import view from './view'
+import store from './store'
 
 
 view(store.getState())

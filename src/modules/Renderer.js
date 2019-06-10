@@ -1,4 +1,4 @@
-const { patch } = require('superfine')
+import { patch } from 'superfine'
 
 /* eslint-disable fp/no-mutation, fp/no-let */
 // Renderer's variable reassignment is necessary for the VDOM's diffing algorithm
@@ -9,4 +9,5 @@ const Renderer = (container) => {
   }
 }
 
-module.exports = Renderer
+
+export default Renderer
