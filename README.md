@@ -12,6 +12,9 @@ CODE
 - [x] use import/export instead of require()
 - [x] use event labels instead of classes
 
+TESTS
+- [ ] trigger multiple events from two different streams with artificially-long runtime processing to see if the events are processed in order of emission or not
+
 FEATURES
 - [ ] add basic styles
 - [x] delete todos
