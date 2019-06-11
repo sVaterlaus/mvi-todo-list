@@ -1,8 +1,9 @@
 // the "h" import is required bedcause JSX is transpiled to superfine's "h" function
 import { h } from 'superfine' // eslint-disable-line no-unused-vars
 
+// cyclic import between on() and view() is required for app to function as expected (see readme)
+import on from './on' // eslint-disable-line import/no-cycle
 import Renderer from './modules/Renderer'
-import run from './run'
 
 
 const render = Renderer(document.body)
@@ -12,7 +13,7 @@ const Todos = ({ todos }) => (
     {todos.map(todo => <div key={todo.id} style={{ display: 'flex' }}>
       <button
         data-id={todo.id}
-        onclick={run('deleteTodoClick')}
+        oncreate={on(['click', 'deleteTodo'])}
       >X</button>
       <li style={{ listStyleType: 'none' }}>{todo.text}</li>
     </div>)}
@@ -24,27 +25,26 @@ const TodoInput = ({ inputValue }) => (
     <input
       type='text'
       value={inputValue}
-      onkeyup={run('inputTodoKeyup')}
-      oninput={run('inputTodoInput')}
+      oncreate={on(['keyup', 'addTodo'], ['input', 'inputTodo'])}
     ></input>
-    <button
-      onclick={run('addTodoClick')}
-    >add</button>
+    <button oncreate={on(['click', 'addTodo'])}>add</button>
   </span>
 )
 
 
-const view = (model) => {
-  const todos = model.get('todos').toJS()
-  const todoInputValue = model.get('todoInputValue')
+const view = (model$) => {
+  model$.onValue((model) => {
+    const todos = model.get('todos').toJS()
+    const todoInputValue = model.get('todoInputValue')
 
-  render(
-    <div>
-      <h2>MVI Todo List</h2>
-      <Todos todos={todos} />
-      <TodoInput inputValue={todoInputValue} />
-    </div>
-  )
+    render(
+      <div>
+        <h2>MVI Todo List</h2>
+        <Todos todos={todos} />
+        <TodoInput inputValue={todoInputValue} />
+      </div>,
+    )
+  })
 }
 
 

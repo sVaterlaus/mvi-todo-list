@@ -1,4 +1,5 @@
 import Immutable from 'immutable'
+import * as B from 'baconjs'
 
 
 // Store's variable reassignment is necessary for updating an immutable data store
@@ -11,6 +12,8 @@ const Store = (initState) => {
       state = transform(state) // eslint-disable-line fp/no-mutation
       return state
     },
+
+    stream: () => B.constant(state),
 
     DEBUG: (label = 'store') => {
       console.log(`${label}: `, state.toJS())

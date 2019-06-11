@@ -4,7 +4,8 @@
         "plugin:fp/recommended"
     ],
     "plugins": [
-        "fp"
+        "fp",
+        "react"
     ],
     "rules": {
         "semi": [
@@ -26,6 +27,7 @@
         "fp/no-unused-expression": 0,
         "fp/no-nil": 0,
         "fp/no-rest-parameters": 0,
+        "react/jsx-uses-vars": 2
     },
     "parserOptions": {
         "ecmaFeatures": {
