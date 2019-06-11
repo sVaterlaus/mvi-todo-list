@@ -15,7 +15,7 @@ CODE
 FEATURES
 - [ ] add basic styles
 - [x] delete todos
-- [ ] complete todos, (cross out and list in "completed" section)
+- [x] complete todos, (move to "completed" section)
 - [ ] reorder todos (drag & drop)
 - [ ] persist todos with local database
 - [ ] add user login with simple username/password auth

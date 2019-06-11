@@ -13,6 +13,10 @@ const Todos = ({ todos }) => (
     {todos.map(todo => <div key={todo.id} style={{ display: 'flex' }}>
       <button
         data-id={todo.id}
+        oncreate={on(['click', 'toggleComplete'])}
+      >Y</button>
+      <button
+        data-id={todo.id}
         oncreate={on(['click', 'deleteTodo'])}
       >X</button>
       <li style={{ listStyleType: 'none' }}>{todo.text}</li>
@@ -31,17 +35,20 @@ const TodoInput = ({ inputValue }) => (
   </span>
 )
 
-
 const view = (model$) => {
   model$.onValue((model) => {
     const todos = model.get('todos').toJS()
     const todoInputValue = model.get('todoInputValue')
+    const completed = todos.filter(todo => todo.isComplete)
+    const pending = todos.filter(todo => !todo.isComplete)
 
     render(
       <div>
-        <h2>MVI Todo List</h2>
-        <Todos todos={todos} />
+        <h2>Todo:</h2>
+        <Todos todos={pending} />
         <TodoInput inputValue={todoInputValue} />
+        <h2>Completed:</h2>
+        <Todos todos={completed} />
       </div>,
     )
   })

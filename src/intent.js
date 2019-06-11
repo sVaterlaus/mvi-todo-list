@@ -27,6 +27,13 @@ const intent = ([event$, tag]) => {
       }))
     }
 
+    case 'toggleComplete': {
+      return event$.map(e => ({
+        type: 'TOGGLE_COMPLETE',
+        payload: { id: e.target.dataset.id },
+      }))
+    }
+
     default: {
       console.warn('Event tag not recognized: ', tag)
       return never()
