@@ -8,7 +8,7 @@ This is an example app using a reactive Model-View-Intent pattern and an immutab
 ## Todo:
 CODE
 - [x] replace view's h() syntax with JSX
-- [ ] split up view layer into components
+- [x] split up view layer into components
 - [x] re-architect to use listeners instead of streams
 - [x] use import/export instead of require()
 - [x] use event labels instead of classes

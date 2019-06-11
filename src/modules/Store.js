@@ -12,8 +12,7 @@ const Store = (initState) => {
       return state
     },
 
-    // debug: NOT FOR PRODUCTION
-    debug: (label = 'store') => {
+    DEBUG: (label = 'store') => {
       console.log(`${label}: `, state.toJS())
     },
   }

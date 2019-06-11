@@ -5,14 +5,14 @@ const model = ({ type, payload }) => {
   switch (type) {
     case 'ADD_TODO': {
       return store.update(state => {
-        const inputText = state.get('todoInput')
+        const inputText = state.get('todoInputValue')
         return state
           .updateIn(['todos'], todos => todos.insert(todos.size, { text: inputText, id: payload.id }))
-          .setIn(['todoInput'], '')
+          .setIn(['todoInputValue'], '')
       })
     }
     case 'INPUT_TODO': {
-      return store.update(state => state.setIn(['todoInput'], payload.value))
+      return store.update(state => state.setIn(['todoInputValue'], payload.value))
     }
     case 'DELETE_TODO': {
       return store.update(state => state
