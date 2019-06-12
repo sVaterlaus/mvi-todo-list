@@ -1,7 +1,6 @@
 import uuid from 'uuid/v4'
 import { never } from 'baconjs'
 
-
 const intent = ([event$, tag]) => {
   switch (tag) {
     case 'deleteTodo': {
@@ -40,6 +39,5 @@ const intent = ([event$, tag]) => {
     }
   }
 }
-
 
 export default intent

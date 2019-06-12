@@ -9,5 +9,4 @@ const Renderer = (container) => {
   }
 }
 
-
 export default Renderer

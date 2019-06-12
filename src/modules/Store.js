@@ -1,7 +1,6 @@
 import Immutable from 'immutable'
 import * as B from 'baconjs'
 
-
 // Store's variable reassignment is necessary for updating an immutable data store
 const Store = (initState) => {
   let state = Immutable.fromJS(initState) // eslint-disable-line fp/no-let
@@ -20,6 +19,5 @@ const Store = (initState) => {
     },
   }
 }
-
 
 export default Store

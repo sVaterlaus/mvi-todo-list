@@ -1,6 +1,5 @@
 import store from './store'
 
-
 const model = intent$ => intent$.map(({ type, payload }) => {
   switch (type) {
     case 'ADD_TODO': {
@@ -36,6 +35,5 @@ const model = intent$ => intent$.map(({ type, payload }) => {
     }
   }
 })
-
 
 export default model

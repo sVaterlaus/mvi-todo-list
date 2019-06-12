@@ -1,40 +1,42 @@
 {
-    "extends": [
-        "airbnb-base",
-        "plugin:fp/recommended"
-    ],
-    "plugins": [
-        "fp",
-        "react"
-    ],
-    "rules": {
-        "semi": [
-            2,
-            "never"
-        ],
-        "max-len": [
-            2,
-            {
-                "code": 120
-            }
-        ],
-        "fp/no-mutation": [
-            2,
-            {
-                "commonjs": true
-            }
-        ],
-        "fp/no-unused-expression": 0,
-        "fp/no-nil": 0,
-        "fp/no-rest-parameters": 0,
-        "react/jsx-uses-vars": 2
-    },
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        }
-    },
-    "env": {
-        "browser": true
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "standard",
+    "standard-jsx",
+    "plugin:import/recommended",
+    "plugin:fp/recommended"
+  ],
+  "plugins": ["fp"],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
     }
+  },
+  "rules": {
+    // "indent": 2,
+    "no-tabs": 0,
+    "array-bracket-spacing": 2,
+    "comma-dangle": [
+      2,
+      "always-multiline"
+    ],
+    "fp/no-mutation": [
+      2,
+      {
+        "commonjs": true
+      }
+    ],
+    "fp/no-unused-expression": 0,
+    "fp/no-nil": 0,
+    "fp/no-rest-parameters": 0
+  }
 }
