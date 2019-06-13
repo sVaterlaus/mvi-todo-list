@@ -22,12 +22,30 @@
     }
   },
   "rules": {
-    // "indent": 2,
-    "no-tabs": 0,
+    "max-len": [
+      2,
+      {
+        "code": 120
+      }
+    ],
+
+    "arrow-parens": [
+      2,
+      "as-needed",
+      {
+        "requireForBlockBody": true
+      }
+    ],
     "array-bracket-spacing": 2,
     "comma-dangle": [
       2,
-      "always-multiline"
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "never"
+      }
     ],
     "fp/no-mutation": [
       2,

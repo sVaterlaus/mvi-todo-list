@@ -3,6 +3,25 @@ import { never } from 'baconjs'
 
 const intent = ([event$, tag]) => {
   switch (tag) {
+    case 'startDragTodo': {
+      return event$.map(e => ({
+        type: 'START_DRAG_TODO',
+        payload: { id: e.target.dataset.id },
+      }))
+    }
+
+    case 'dragOverTodo': {
+      // event$.onValue(e => console.log(tag, e))
+      return event$
+    }
+
+    case 'dropTodo': {
+      return event$.map(e => ({
+        type: 'DROP_TODO',
+        payload: { id: e.target.dataset.id },
+      }))
+    }
+
     case 'deleteTodo': {
       return event$.map(e => ({
         type: 'DELETE_TODO',
@@ -26,9 +45,9 @@ const intent = ([event$, tag]) => {
       }))
     }
 
-    case 'toggleComplete': {
+    case 'toggleCompleteTodo': {
       return event$.map(e => ({
-        type: 'TOGGLE_COMPLETE',
+        type: 'TOGGLE_COMPLETE_TODO',
         payload: { id: e.target.dataset.id },
       }))
     }

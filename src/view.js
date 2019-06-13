@@ -1,4 +1,4 @@
-// the "h" import is required bedcause JSX is transpiled to superfine's "h" function
+// the "h" import is required bedcause JSX is transpiled with superfine's "h" function
 import { h } from 'superfine' // eslint-disable-line no-unused-vars
 
 import on from './on'
@@ -6,21 +6,31 @@ import Renderer from './modules/Renderer'
 
 const render = Renderer(document.body)
 
-const Todos = ({ todos }) => (
-  <ul>
-    {todos.map(todo => <div key={todo.id} style={{ display: 'flex' }}>
-      <button
-        data-id={todo.id}
-        oncreate={on(['click', 'toggleComplete'])}
-      >Y</button>
-      <button
-        data-id={todo.id}
-        oncreate={on(['click', 'deleteTodo'])}
-      >X</button>
-      <li style={{ listStyleType: 'none' }}>{todo.text}</li>
-    </div>)}
-  </ul>
+const Todo = ({ todo }) => (
+  <div
+    key={todo.id}
+    data-id={todo.id}
+    style={{ display: 'flex' }}
+    draggable
+    oncreate={on(
+      ['dragstart', 'startDragTodo'],
+      ['dragover', 'dragOverTodo', true],
+      ['drop', 'dropTodo', true]
+    )}
+  >
+    <button
+      data-id={todo.id}
+      oncreate={on(['click', 'toggleCompleteTodo'])}
+    >Y</button>
+    <button
+      data-id={todo.id}
+      oncreate={on(['click', 'deleteTodo'])}
+    >X</button>
+    <li data-id={todo.id} style={{ listStyleType: 'none' }}>{todo.text}</li>
+  </div>
 )
+
+const Todos = ({ todos }) => <ul>{todos.map(todo => <Todo todo={todo} />)}</ul>
 
 const TodoInput = ({ inputValue }) => (
   <span>
